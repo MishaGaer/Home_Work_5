@@ -13,7 +13,14 @@ int InputControl(string message)
         Console.WriteLine(message);
         if (int.TryParse(Console.ReadLine(), out int number))
         {
+            if (number > 0)
+            {
             return number;
+            }
+            else
+            {
+                Console.WriteLine("Вы ввели значение меньше допустимого. Пожалуйста введите корректное значение.");
+            }
         }
         else
         {
