@@ -29,18 +29,18 @@ int InputControl(string message)
     }
 }
 //рандомное заполнение массива
-void FillArray(int[] array)
+void FillArray(double[] array)
 {
     int length = array.Length;
     int index = 0;
     while (index < length)
     {
-        array[index] = new Random().Next(-999, 1000);
+        array[index] = new Random().Next(-99, 100);
         index++;
     }
 }
 //Печать массива в консоль
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     int lenght = array.Length;
     lenght = lenght - 1;
@@ -52,11 +52,11 @@ void PrintArray(int[] array)
     }
     Console.WriteLine($"{array[position]}");
 }
-//нахождение минимума и максимуа
-(int, int) GetMaxAndMin(int[] array)
+//нахождение минимума и максимума
+(double, double) GetMaxAndMin(double[] array)
 {
-    int max = array[0];
-    int min = array[0];
+    double max = array[0];
+    double min = array[0];
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > max)
@@ -75,10 +75,10 @@ void PrintArray(int[] array)
 }
 //Основной код
 int length = InputControl("Введите размер массива");
-int[] array = new int[length];
+double[] array = new double[length];
 Console.WriteLine("Значения внутри заданного массива:");
 FillArray(array);
 PrintArray(array);
-(int max, int min) = GetMaxAndMin(array);
+(double max, double min) = GetMaxAndMin(array);
 Console.WriteLine($"Разница между максимальным ({max}) и минимальным({min}) значениями массива равна {max - min}");
 
